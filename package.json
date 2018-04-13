@@ -1,6 +1,6 @@
 {
   "name": "react-scroll-into-view",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple React element that when clicked scrolls to any element on page",
   "main": "build/index.js",
   "scripts": {
