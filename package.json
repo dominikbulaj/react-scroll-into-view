@@ -1,0 +1,29 @@
+{
+  "name": "react-scroll-into-view",
+  "version": "1.0.0",
+  "description": "Simple React element that when clicked scrolls to any element on page",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dominikbulaj/react-scroll-into-view.git"
+  },
+  "keywords": [
+    "react",
+    "scroll"
+  ],
+  "author": "Dominik Bułaj <dominik@bulaj.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dominikbulaj/react-scroll-into-view/issues"
+  },
+  "homepage": "https://github.com/dominikbulaj/react-scroll-into-view#readme",
+  "devDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "recompose": "^0.26.0"
+  }
+}
