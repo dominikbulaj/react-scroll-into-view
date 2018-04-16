@@ -1,10 +1,10 @@
 {
   "name": "react-scroll-into-view",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple React element that when clicked scrolls to any element on page",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,13 +23,14 @@
   "homepage": "https://github.com/dominikbulaj/react-scroll-into-view#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "recompose": "^0.26.0",
-    "webpack": "^4.5.0",
-    "webpack-cli": "^2.0.14"
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
