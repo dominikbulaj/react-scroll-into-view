@@ -23,6 +23,7 @@
   "homepage": "https://github.com/dominikbulaj/react-scroll-into-view#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-es2015-rollup": "^3.0.0",
     "prop-types": "^15.6.1",
