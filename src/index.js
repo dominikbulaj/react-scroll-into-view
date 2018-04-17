@@ -2,8 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { compose, withHandlers } from 'recompose'
 
-const ScrollInto = ({ children, scrollIntoView }) => (
-  <div onClick={scrollIntoView}>
+const defaultStyle = {
+  display:'inline',
+}
+
+const ScrollInto = ({ children, scrollIntoView, style }) => (
+  <div style={{...defaultStyle, style}} onClick={scrollIntoView}>
     {children}
   </div>
 )
@@ -11,10 +15,12 @@ const ScrollInto = ({ children, scrollIntoView }) => (
 ScrollInto.propTypes = {
   selector: PropTypes.string.isRequired,
   smooth: PropTypes.bool,
+  style: PropTypes.object,
 }
 
 ScrollInto.defaultProps = {
   smooth: true,
+  style: {}
 }
 
 export default compose(

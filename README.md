@@ -5,6 +5,9 @@ Declarative way for scrolling into view any page element
 While developing landing page we needed way to scroll page to focus on registration form. It was obvious we will use [element.scrollIntoView](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) we just need find nice way how to.
 This is just simple React element that provides declarative way to scroll to any element on page when it's clicked.
 
+## Changelog
+See [releases](releases) tab
+
 ## Installation
 ```
 yarn add react-scroll-into-view
@@ -37,6 +40,7 @@ Than use it
 | --- | --- | --- | ---
 | selector | String | | **Required**. Valid [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to element to which we want to scroll
 | smooth | Boolean | true | Scroll behaviour; when true - transition animation will be smooth. Otherwise instant.
+| style | Object | `{display: 'inline'}` | CSS styles passed to element 
 
 ## TODO
 * tests
