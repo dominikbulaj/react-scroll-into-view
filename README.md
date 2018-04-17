@@ -6,7 +6,7 @@ While developing landing page we needed way to scroll page to focus on registrat
 This is just simple React element that provides declarative way to scroll to any element on page when it's clicked.
 
 ## Changelog
-See [releases](releases) tab
+See [releases](/dominikbulaj/react-scroll-into-view/releases) tab
 
 ## Installation
 ```
