@@ -43,7 +43,7 @@ Than use it
 | style | Object | `{display: 'inline'}` | CSS styles passed to element 
 
 ## Changelog
-See [releases](/dominikbulaj/react-scroll-into-view/releases) tab
+See [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab
 
 ## TODO
 * tests
