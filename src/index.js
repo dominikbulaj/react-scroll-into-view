@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { compose, withHandlers } from 'recompose'
+import { compose, defaultProps, withHandlers } from 'recompose'
 
 const defaultStyle = {
-  display:'inline',
+  display: 'inline',
 }
 
 const ScrollInto = ({ children, scrollIntoView, style }) => (
-  <div style={{...defaultStyle, style}} onClick={scrollIntoView}>
+  <div style={{ ...defaultStyle, style }} onClick={scrollIntoView}>
     {children}
   </div>
 )
@@ -16,19 +16,27 @@ ScrollInto.propTypes = {
   selector: PropTypes.string.isRequired,
   smooth: PropTypes.bool,
   style: PropTypes.object,
-}
-
-ScrollInto.defaultProps = {
-  smooth: true,
-  style: {}
+  alignToTop: PropTypes.bool,
 }
 
 export default compose(
+  defaultProps({
+    smooth: true,
+    style: {},
+    alignToTop: false
+  }),
   withHandlers({
-    scrollIntoView: ({ selector, smooth = true }) => e => {
+    scrollIntoView: ({ selector, smooth, alignToTop }) => _ => {
       const behavior = smooth ? 'smooth' : 'instant'
+      const options = { behavior }
+      // scroll to top
+      if (alignToTop) {
+        options.block = 'start'
+        options.inline = 'nearest'
+      }
+
       const el = document.querySelector(selector)
-      el.scrollIntoView({ behavior })
+      el.scrollIntoView(options)
     }
   })
 )(ScrollInto)
