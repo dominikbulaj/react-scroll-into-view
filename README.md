@@ -41,6 +41,7 @@ Than use it
 | selector | String | | **Required**. Valid [CSS Selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) to element to which we want to scroll
 | smooth | Boolean | true | Scroll behaviour; when true - transition animation will be smooth. Otherwise instant.
 | style | Object | `{display: 'inline'}` | CSS styles passed to element 
+| alignToTop | Boolean | false | Whether top of the element should be aligned to the top of the visible area. Default: aligns to bottom of element 
 
 ## Changelog
 See [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab
