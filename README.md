@@ -1,6 +1,7 @@
 # React scroll-into-view
 [![Build Status](https://travis-ci.org/dominikbulaj/react-scroll-into-view.svg?branch=master)](https://travis-ci.org/dominikbulaj/react-scroll-into-view)
 [![npm](https://img.shields.io/npm/v/react-scroll-into-view.svg)](https://www.npmjs.com/package/react-scroll-into-view)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 Declarative way for scrolling into view any page element
 
