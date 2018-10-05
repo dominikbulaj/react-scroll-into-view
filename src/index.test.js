@@ -1,8 +1,8 @@
-import React from "react";
-import ScrollInto from "./index";
-import renderer from "react-test-renderer";
+import React from 'react';
+import ScrollInto from './index';
+import renderer from 'react-test-renderer';
 
-test("ScrollInto renders with children", () => {
+test('ScrollInto renders with children', () => {
   const component = renderer.create(
     <ScrollInto selector="test">
       <div>Some child content</div>
@@ -13,7 +13,7 @@ test("ScrollInto renders with children", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("ScrollInto renders with custom className", () => {
+test('ScrollInto renders with custom className', () => {
   const component = renderer.create(
     <ScrollInto selector="test" className="custom-class">
       <div>Some child content</div>
@@ -24,9 +24,9 @@ test("ScrollInto renders with custom className", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("ScrollInto renders with custom styles", () => {
+test('ScrollInto renders with custom styles', () => {
   const component = renderer.create(
-    <ScrollInto selector="test" style={{ display: "inline" }}>
+    <ScrollInto selector="test" style={{ display: 'inline' }}>
       <div>Some child content</div>
     </ScrollInto>
   );
@@ -35,11 +35,11 @@ test("ScrollInto renders with custom styles", () => {
   expect(tree).toMatchSnapshot();
 });
 
-test("ScrollInto renders with custom styles and className", () => {
+test('ScrollInto renders with custom styles and className', () => {
   const component = renderer.create(
     <ScrollInto
       selector="test"
-      style={{ display: "inline", color: "red" }}
+      style={{ display: 'inline', color: 'red' }}
       className="pinky"
     >
       <div>Some child content</div>

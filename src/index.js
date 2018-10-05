@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { compose, defaultProps, withHandlers } from "recompose";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { compose, defaultProps, withHandlers } from 'recompose';
 
 const ScrollInto = ({ children, scrollIntoView, style, className }) => (
   <div style={style} className={className} onClick={scrollIntoView}>
@@ -21,16 +21,16 @@ export default compose(
     smooth: true,
     style: {},
     alignToTop: false,
-    className: ""
+    className: ''
   }),
   withHandlers({
     scrollIntoView: ({ selector, smooth, alignToTop }) => _ => {
-      const behavior = smooth ? "smooth" : "instant";
+      const behavior = smooth ? 'smooth' : 'instant';
       const options = { behavior };
       // scroll to top
       if (alignToTop) {
-        options.block = "start";
-        options.inline = "nearest";
+        options.block = 'start';
+        options.inline = 'nearest';
       }
 
       const el = document.querySelector(selector);

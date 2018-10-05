@@ -22,26 +22,29 @@
   },
   "homepage": "https://github.com/dominikbulaj/react-scroll-into-view#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge",
     "babel-jest": "^23.6.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-preset-react": "^6.24.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
     "jest": "^23.6.0",
     "prop-types": "^15.6.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-test-renderer": "^16.5.2",
-    "recompose": "^0.26.0",
-    "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3",
+    "recompose": "^0.30.0",
+    "rollup": "^0.66.4",
+    "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-uglify": "^6.0.0"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.5.2"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
