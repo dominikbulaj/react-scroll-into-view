@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollInto renders with children 1`] = `
+<div
+  className=""
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div>
+    Some child content
+  </div>
+</div>
+`;
+
+exports[`ScrollInto renders with custom className 1`] = `
+<div
+  className="custom-class"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div>
+    Some child content
+  </div>
+</div>
+`;
+
+exports[`ScrollInto renders with custom styles 1`] = `
+<div
+  className=""
+  onClick={[Function]}
+  style={
+    Object {
+      "display": "inline",
+    }
+  }
+>
+  <div>
+    Some child content
+  </div>
+</div>
+`;
+
+exports[`ScrollInto renders with custom styles and className 1`] = `
+<div
+  className="pinky"
+  onClick={[Function]}
+  style={
+    Object {
+      "color": "red",
+      "display": "inline",
+    }
+  }
+>
+  <div>
+    Some child content
+  </div>
+</div>
+`;

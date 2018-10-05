@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,17 @@
   "homepage": "https://github.com/dominikbulaj/react-scroll-into-view#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-jest": "^23.6.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.6.0",
     "prop-types": "^15.6.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-test-renderer": "^16.5.2",
     "recompose": "^0.26.0",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",

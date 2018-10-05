@@ -15,8 +15,12 @@ export default {
     }),
     resolve(),
     babel({
-      exclude: 'node_modules/**'
+      babelrc: false,
+      presets: ['es2015-rollup'],
+      exclude: 'node_modules/**',
+      plugins: ['transform-react-jsx', 'transform-object-rest-spread'],
     }),
+
     uglify()
   ],
   external: ['react']

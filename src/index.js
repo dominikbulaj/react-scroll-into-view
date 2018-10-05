@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {compose, defaultProps, withHandlers} from 'recompose'
+import { compose, defaultProps, withHandlers } from 'recompose'
 
 const ScrollInto = ({children, scrollIntoView, style, className}) => (
   <div style={style} className={className} onClick={scrollIntoView}>
@@ -16,16 +16,12 @@ ScrollInto.propTypes = {
   className: PropTypes.string,
 }
 
-ScrollInto.defaultProps = {
-  className: '',
-  style: {}
-}
-
 export default compose(
   defaultProps({
     smooth: true,
     style: {},
-    alignToTop: false
+    alignToTop: false,
+    className: ''
   }),
   withHandlers({
     scrollIntoView: ({selector, smooth, alignToTop}) => _ => {

@@ -48,5 +48,4 @@ Than use it
 See [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab
 
 ## TODO
-* tests
 * support for all [element.scrollIntoView](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) parameters
