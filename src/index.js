@@ -1,12 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { compose, defaultProps, withHandlers } from 'recompose';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-const ScrollInto = ({ children, scrollIntoView, style, className }) => (
-  <div style={style} className={className} onClick={scrollIntoView}>
+const ScrollInto = ({ children, selector, smooth = true, style = {}, alignToTop = false, className = '' }) => {
+
+  const scrollIntoView = _ => {
+    const behavior = smooth ? 'smooth' : 'instant'
+    const options = { behavior }
+    // Scroll to top
+    if (alignToTop) {
+      options.block = 'start'
+      options.inline = 'nearest'
+    }
+
+    const el = document.querySelector(selector)
+    el.scrollIntoView(options)
+  }
+
+  return <div style={style} className={className} onClick={scrollIntoView}>
     {children}
   </div>
-);
+}
 
 ScrollInto.propTypes = {
   selector: PropTypes.string.isRequired,
@@ -14,27 +27,6 @@ ScrollInto.propTypes = {
   style: PropTypes.object,
   alignToTop: PropTypes.bool,
   className: PropTypes.string
-};
+}
 
-export default compose(
-  defaultProps({
-    smooth: true,
-    style: {},
-    alignToTop: false,
-    className: ''
-  }),
-  withHandlers({
-    scrollIntoView: ({ selector, smooth, alignToTop }) => _ => {
-      const behavior = smooth ? 'smooth' : 'instant';
-      const options = { behavior };
-      // scroll to top
-      if (alignToTop) {
-        options.block = 'start';
-        options.inline = 'nearest';
-      }
-
-      const el = document.querySelector(selector);
-      el.scrollIntoView(options);
-    }
-  })
-)(ScrollInto);
+export default ScrollInto
