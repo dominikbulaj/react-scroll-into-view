@@ -10,7 +10,7 @@ While developing landing page we needed way to scroll page to focus on registrat
 This is just simple React element that provides declarative way to scroll to any element on page when it's clicked.
 
 ## Demo
-See this [codesandbox](https://codesandbox.io/s/14lxm6jmm7)
+Check out that [codesandbox](https://codesandbox.io/s/14lxm6jmm7) example
 
 ## Installation
 ```
@@ -27,7 +27,7 @@ First import it
 import ScrollIntoView from 'react-scroll-into-view'
 ```
 
-Than use it
+Then use it
 ```
 <ScrollIntoView selector="#footer">
   <button className="mdl-button mdl-js-button mdl-button--raised">
@@ -49,7 +49,7 @@ Than use it
 | className | String | | Optional class name to be applied to element
 
 ## Changelog
-See [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab
+Please check [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab for full details
 
 ## TODO
 * support for all [element.scrollIntoView](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) parameters
