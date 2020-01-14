@@ -47,6 +47,7 @@ Then use it
 | style | Object | {} | CSS styles passed to element <br>**NOTE** prior v1.4.0 default value was `{display: 'inline'}`
 | alignToTop | Boolean | false | Whether top of the element should be aligned to the top of the visible area. Default: aligns to bottom of element
 | className | String | | Optional class name to be applied to element
+| onClick| Function | | Callback fired on click
 
 ## Changelog
 Please check [releases](https://github.com/dominikbulaj/react-scroll-into-view/releases) tab for full details
