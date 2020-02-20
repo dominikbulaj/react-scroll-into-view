@@ -7,4 +7,6 @@ interface ScrollIntoViewProps {
     className?: string,
 }
 
-declare function ScrollIntoView(props: ScrollIntoViewProps): JSX.Element
+const ScrollIntoView: React.FunctionComponent<ScrollIntoViewProps> = props => {}
+
+export default ScrollIntoView
