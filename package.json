@@ -4,7 +4,8 @@
   "description": "Simple React element that when clicked scrolls to any element on page",
   "main": "dist/index.js",
   "files": [
-    "dist/index.js"
+    "dist/index.js",
+    "react-scroll-into-view.d.ts"
   ],
   "scripts": {
     "build": "rollup -c",
@@ -48,5 +49,6 @@
   },
   "prettier": {
     "singleQuote": true
-  }
+  },
+  "types": "react-scroll-into-view.d.ts"
 }

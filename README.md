@@ -1,9 +1,10 @@
 # React scroll-into-view
 [![Build Status](https://travis-ci.org/dominikbulaj/react-scroll-into-view.svg?branch=master)](https://travis-ci.org/dominikbulaj/react-scroll-into-view)
 [![npm](https://img.shields.io/npm/v/react-scroll-into-view.svg)](https://www.npmjs.com/package/react-scroll-into-view)
+[![bundlephobia](https://badgen.net/bundlephobia/minzip/react-scroll-into-view)](https://bundlephobia.com/result?p=react-scroll-into-view)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-Declarative way for scrolling into view any page element
+Fast & declarative way for scrolling to any element on page. Weights only ~450 B minified + gzipped
 
 ## Idea behind
 While developing landing page we needed way to scroll page to focus on registration form. It was obvious we will use [element.scrollIntoView](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) we just need find nice way how to.
