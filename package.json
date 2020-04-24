@@ -48,7 +48,10 @@
     "react": "^16.5.2"
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": false
   },
   "types": "react-scroll-into-view.d.ts"
 }
