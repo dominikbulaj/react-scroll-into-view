@@ -1,6 +1,34 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 
+const validScrollOptions = (scrollOptions) => {
+  const options = {}
+  if (scrollOptions instanceof Object) {
+    Object.entries(scrollOptions).forEach(([key, val]) => {
+      switch (key) {
+        case 'behavior': // auto or smooth
+          if (val === 'auto' || val === 'smooth') {
+            options[key] = val
+          }
+
+        case 'block': // start, center, end, or nearest
+        case 'inline': // start, center, end, or nearest
+          if (
+            val === 'start' ||
+            val === 'center' ||
+            val === 'end' ||
+            val === 'nearest'
+          ) {
+            options[key] = val
+          }
+
+        default:
+      }
+    })
+  }
+  return options
+}
+
 const ScrollInto = ({
   children,
   selector,
@@ -8,11 +36,17 @@ const ScrollInto = ({
   style = {},
   alignToTop = false,
   className = '',
-  onClick
+  onClick,
+  scrollOptions = {}
 }) => {
   const scrollIntoView = () => {
     const behavior = smooth ? 'smooth' : 'instant'
-    const options = { behavior }
+    const options = {
+      behavior,
+      // provided scrollOptions are valid - we can use them
+      ...validScrollOptions(scrollOptions)
+    }
+
     // Scroll to top
     if (alignToTop) {
       options.block = 'start'
@@ -51,7 +85,12 @@ ScrollInto.propTypes = {
   style: PropTypes.object,
   alignToTop: PropTypes.bool,
   className: PropTypes.string,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  scrollOptions: PropTypes.shape({
+    behavior: PropTypes.oneOf(['auto', 'smooth']),
+    block: PropTypes.oneOf(['start', 'center', 'end', 'nearest']),
+    inline: PropTypes.oneOf(['start', 'center', 'end', 'nearest'])
+  })
 }
 
 export default ScrollInto
