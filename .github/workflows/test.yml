@@ -1,4 +1,4 @@
-name: Node.js CI
+name: test
 
 on:
   push:
@@ -17,7 +17,8 @@ jobs:
           cmd: install # will run `yarn install` command
       - uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: build # will run `yarn build` command
+          cmd: test # will run `yarn test` command
       - uses: borales/actions-yarn@v2.3.0
         with:
-          cmd: test # will run `yarn test` command
+          cmd: build # will run `yarn build` command
+
