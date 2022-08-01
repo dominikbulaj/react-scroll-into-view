@@ -17,20 +17,16 @@ export default {
     }
   ],
   plugins: [
-    typescript(),
+    typescript({
+      compilerOptions: { declaration: true, declarationDir: './types' }
+    }),
     nodeResolve(),
     babel({
       babelrc: false,
       presets: ['@babel/preset-env', '@babel/preset-react'],
       exclude: 'node_modules/**',
-      plugins: [
-        [
-          'transform-react-remove-prop-types',
-          {
-            removeImport: true
-          }
-        ]
-      ]
+      plugins: [],
+      babelHelpers: 'runtime'
     }),
     terser()
   ],

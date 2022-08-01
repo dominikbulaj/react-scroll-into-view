@@ -13,10 +13,10 @@
     "react-scroll-into-view.d.ts"
   ],
   "scripts": {
-    "build": "tsc && package-check && rollup -c && yarn clean",
-    "test": "tsc && jest && yarn clean",
+    "build": "package-check && rollup -c && yarn move_types",
+    "test": "jest",
     "tsc": "tsc",
-    "clean": "rm -r build/"
+    "move_types": "mv dist/*.ts types/"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^28.1.3",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
+    "husky": "^8.0.1",
     "jest": "^28.1.3",
     "jest-environment-jsdom": "^28.1.3",
     "react": "^16.5.2",
@@ -70,5 +70,10 @@
     "tabWidth": 2,
     "semi": false
   },
-  "types": "react-scroll-into-view.d.ts"
+  "types": "types/index.d.ts",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn tsc && yarn test && yarn build"
+    }
+  }
 }

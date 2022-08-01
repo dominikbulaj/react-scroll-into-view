@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "build/",
+    "noEmit": true,
     "module": "esnext",
     "target": "ES2018",
     "lib": ["es6", "dom"],
@@ -15,7 +15,8 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "declaration": false
+    "declaration": true,
+    "declarationDir": "./types"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "jest", "**/*.test.ts"]
