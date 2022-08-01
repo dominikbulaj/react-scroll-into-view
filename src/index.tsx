@@ -1,8 +1,20 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 
-const validScrollOptions = (scrollOptions) => {
-  const options = {}
+export interface ScrollIntoViewProps {
+  selector: string
+  children: React.ReactNode
+  smooth?: boolean
+  style?: object
+  alignToTop?: boolean
+  className?: string
+  scrollOptions?: ScrollIntoViewOptions
+  onClick?: (ev: React.MouseEvent<HTMLElement>) => void
+}
+
+const validScrollOptions = (
+  scrollOptions: ScrollIntoViewOptions
+): ScrollOptions => {
+  const options: ScrollIntoViewOptions = {}
   if (scrollOptions instanceof Object) {
     Object.entries(scrollOptions).forEach(([key, val]) => {
       switch (key) {
@@ -38,10 +50,10 @@ const ScrollInto = ({
   className = '',
   onClick,
   scrollOptions = {}
-}) => {
+}: ScrollIntoViewProps) => {
   const scrollIntoView = () => {
-    const behavior = smooth ? 'smooth' : 'instant'
-    const options = {
+    const behavior = smooth ? 'smooth' : 'auto'
+    const options: ScrollIntoViewOptions = {
       behavior,
       // provided scrollOptions are valid - we can use them
       ...validScrollOptions(scrollOptions)
@@ -54,7 +66,9 @@ const ScrollInto = ({
     }
 
     const el = document.querySelector(selector)
-    el.scrollIntoView(options)
+    if (el) {
+      el.scrollIntoView(options)
+    }
   }
 
   /**
@@ -63,7 +77,7 @@ const ScrollInto = ({
    * `scrollIntoView` as e.g. MaterialUI Menu changes `body` element style to `overflow: hidden` blocking
    * `scrollIntoView`
    */
-  const handleClick = (event) => {
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     if (typeof onClick === 'function') {
       onClick(event)
       setTimeout(scrollIntoView, 1e3 / 60)
@@ -77,20 +91,6 @@ const ScrollInto = ({
       {children}
     </div>
   )
-}
-
-ScrollInto.propTypes = {
-  selector: PropTypes.string.isRequired,
-  smooth: PropTypes.bool,
-  style: PropTypes.object,
-  alignToTop: PropTypes.bool,
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  scrollOptions: PropTypes.shape({
-    behavior: PropTypes.oneOf(['auto', 'smooth']),
-    block: PropTypes.oneOf(['start', 'center', 'end', 'nearest']),
-    inline: PropTypes.oneOf(['start', 'center', 'end', 'nearest'])
-  })
 }
 
 export default ScrollInto

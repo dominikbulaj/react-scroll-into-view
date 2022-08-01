@@ -1,19 +1,13 @@
-interface ScrollOptions {
-    behavior?: 'auto' | 'smooth',
-    block?: 'start' | 'center' | 'end' | 'nearest',
-    inline?: 'start' | 'center' | 'end' | 'nearest',
-}
+import React from 'react';
 export interface ScrollIntoViewProps {
-    selector: string,
-    children: JSX.Element[] | JSX.Element,
-    smooth?: boolean,
-    style?: object,
-    alignToTop?: boolean,
-    className?: string,
-    scrollOptions?: ScrollOptions,
-    onClick?: (ev: MouseEvent) => unknown,
+    selector: string;
+    children: React.ReactNode;
+    smooth?: boolean;
+    style?: object;
+    alignToTop?: boolean;
+    className?: string;
+    scrollOptions?: ScrollIntoViewOptions;
+    onClick?: (ev: React.MouseEvent<HTMLElement>) => void;
 }
-
-declare const ScrollIntoView: React.FunctionComponent<ScrollIntoViewProps>
-
-export default ScrollIntoView
+declare const ScrollInto: ({ children, selector, smooth, style, alignToTop, className, onClick, scrollOptions }: ScrollIntoViewProps) => JSX.Element;
+export default ScrollInto;

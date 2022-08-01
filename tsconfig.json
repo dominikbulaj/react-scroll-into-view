@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "build/",
+    "module": "esnext",
+    "target": "ES2018",
+    "lib": ["es6", "dom"],
+    "sourceMap": false,
+    "allowJs": false,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": false
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "jest", "**/*.test.ts"]
+}

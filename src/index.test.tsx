@@ -1,6 +1,7 @@
 import React from 'react'
 import ScrollInto from './index'
 import renderer from 'react-test-renderer'
+import { render, fireEvent, screen } from '@testing-library/react'
 
 test('ScrollInto renders with children', () => {
   const component = renderer.create(
@@ -50,23 +51,17 @@ test('ScrollInto renders with custom styles and className', () => {
   expect(tree).toMatchSnapshot()
 })
 
-// todo test (optional) scrollOptions prop
-test('ScrollInto accepts valid (optional) scrollOptions prop', () => {
-  const scrollOptions = {
-    behavior: 'smooth',
-    block: 'center',
-    inline: 'center',
-    invalid: '000'
-  }
-  const component = renderer.create(
-    <ScrollInto
-      selector="test"
-      style={{ display: 'inline', color: 'red' }}
-      className="pinky"
-      scrollOptions={scrollOptions}
-    >
-      <div>Some child content</div>
+test('Uses provided callback function', () => {
+  const mockFn = jest.fn()
+  const wrapper = render(
+    <ScrollInto selector="test" onClick={mockFn}>
+      abc
     </ScrollInto>
   )
-  // todo
+  expect(mockFn).toBeCalledTimes(0)
+
+  fireEvent.click(screen.getByText('abc'))
+  // wrapper.find('ScrollInto').simulate('click')
+  expect(mockFn).toBeCalled()
+  expect(mockFn).toBeCalledTimes(1)
 })
