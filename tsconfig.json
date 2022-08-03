@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noEmit": true,
     "module": "esnext",
-    "target": "ES2018",
+    "target": "ES6",
     "lib": ["es6", "dom"],
     "sourceMap": false,
     "allowJs": false,
