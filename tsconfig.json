@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "noEmit": true,
     "module": "esnext",
     "target": "ES6",
     "lib": ["es6", "dom"],
@@ -16,7 +15,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "./types"
+    "declarationDir": "./types",
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "jest", "**/*.test.ts"]
