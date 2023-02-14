@@ -14,13 +14,16 @@ export interface ScrollIntoViewProps {
 const validScrollOptions = (
   scrollOptions: ScrollIntoViewOptions
 ): ScrollOptions => {
-  const options: ScrollIntoViewOptions = {}
-  if (scrollOptions instanceof Object) {
-    Object.entries(scrollOptions).forEach(([key, val]) => {
+  if (typeof scrollOptions !== 'object') {
+    return {}
+  }
+
+  return Object.entries(scrollOptions).reduce<ScrollIntoViewOptions>(
+    (acc, [key, val]) => {
       switch (key) {
         case 'behavior': // auto or smooth
           if (val === 'auto' || val === 'smooth') {
-            options[key] = val
+            acc[key] = val
           }
 
         case 'block': // start, center, end, or nearest
@@ -31,14 +34,15 @@ const validScrollOptions = (
             val === 'end' ||
             val === 'nearest'
           ) {
-            options[key] = val
+            acc[key] = val
           }
 
         default:
       }
-    })
-  }
-  return options
+      return acc
+    },
+    {}
+  )
 }
 
 const ScrollInto = ({
@@ -81,9 +85,9 @@ const ScrollInto = ({
     if (typeof onClick === 'function') {
       onClick(event)
       setTimeout(scrollIntoView, 1e3 / 60)
-    } else {
-      scrollIntoView()
+      return
     }
+    scrollIntoView()
   }
 
   return (

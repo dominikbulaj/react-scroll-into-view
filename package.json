@@ -13,7 +13,7 @@
     "react-scroll-into-view.d.ts"
   ],
   "scripts": {
-    "build": "package-check && rollup -c && yarn move_types",
+    "build": "package-check && rollup -c && npm run move_types",
     "test": "jest",
     "tsc": "tsc",
     "move_types": "mv dist/*.ts types/",
