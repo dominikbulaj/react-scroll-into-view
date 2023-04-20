@@ -9,7 +9,9 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest        
+    runs-on: ubuntu-latest    
+    permissions:
+      id-token: write
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
