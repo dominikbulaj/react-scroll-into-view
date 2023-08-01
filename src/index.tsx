@@ -1,14 +1,16 @@
 import React from 'react'
 
-export interface ScrollIntoViewProps {
+type ClickHandler = (ev: React.MouseEvent<HTMLElement>) => void
+
+export type ScrollIntoViewProps = {
   selector: string
   children: React.ReactNode
   smooth?: boolean
-  style?: object
+  style?: React.CSSProperties
   alignToTop?: boolean
   className?: string
   scrollOptions?: ScrollIntoViewOptions
-  onClick?: (ev: React.MouseEvent<HTMLElement>) => void
+  onClick?: ClickHandler
 }
 
 const validScrollOptions = (
@@ -69,10 +71,7 @@ const ScrollInto = ({
       options.inline = 'nearest'
     }
 
-    const el = document.querySelector(selector)
-    if (el) {
-      el.scrollIntoView(options)
-    }
+    document.querySelector(selector)?.scrollIntoView(options)
   }
 
   /**
@@ -81,7 +80,7 @@ const ScrollInto = ({
    * `scrollIntoView` as e.g. MaterialUI Menu changes `body` element style to `overflow: hidden` blocking
    * `scrollIntoView`
    */
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+  const handleClick: ClickHandler = (event) => {
     if (typeof onClick === 'function') {
       onClick(event)
       setTimeout(scrollIntoView, 1e3 / 60)

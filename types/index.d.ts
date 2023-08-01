@@ -1,13 +1,14 @@
 import React from 'react';
-export interface ScrollIntoViewProps {
+type ClickHandler = (ev: React.MouseEvent<HTMLElement>) => void;
+export type ScrollIntoViewProps = {
     selector: string;
     children: React.ReactNode;
     smooth?: boolean;
-    style?: object;
+    style?: React.CSSProperties;
     alignToTop?: boolean;
     className?: string;
     scrollOptions?: ScrollIntoViewOptions;
-    onClick?: (ev: React.MouseEvent<HTMLElement>) => void;
-}
-declare const ScrollInto: ({ children, selector, smooth, style, alignToTop, className, onClick, scrollOptions }: ScrollIntoViewProps) => JSX.Element;
+    onClick?: ClickHandler;
+};
+declare const ScrollInto: ({ children, selector, smooth, style, alignToTop, className, onClick, scrollOptions }: ScrollIntoViewProps) => React.JSX.Element;
 export default ScrollInto;
