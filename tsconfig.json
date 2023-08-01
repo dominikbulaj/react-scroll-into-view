@@ -15,7 +15,7 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "./types",
+    "declarationDir": "./dist",
     "emitDeclarationOnly": true
   },
   "include": ["src"],

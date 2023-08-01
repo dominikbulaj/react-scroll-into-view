@@ -18,9 +18,7 @@ export default {
     }
   ],
   plugins: [
-    typescript({
-      compilerOptions: { declaration: true, declarationDir: './types' }
-    }),
+    typescript(),
     nodeResolve(),
     babel({
       babelrc: false,
