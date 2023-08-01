@@ -9,8 +9,7 @@
     "require": "./dist/index.cjs.js"
   },
   "files": [
-    "dist/",
-    "react-scroll-into-view.d.ts"
+    "dist/"
   ],
   "scripts": {
     "build": "package-check && rollup -c && npm run move_types",
