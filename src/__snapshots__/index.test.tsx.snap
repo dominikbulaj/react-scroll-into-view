@@ -4,7 +4,7 @@ exports[`ScrollInto renders with children 1`] = `
 <div
   className=""
   onClick={[Function]}
-  style={Object {}}
+  style={{}}
 >
   <div>
     Some child content
@@ -16,7 +16,7 @@ exports[`ScrollInto renders with custom className 1`] = `
 <div
   className="custom-class"
   onClick={[Function]}
-  style={Object {}}
+  style={{}}
 >
   <div>
     Some child content
@@ -29,7 +29,7 @@ exports[`ScrollInto renders with custom styles 1`] = `
   className=""
   onClick={[Function]}
   style={
-    Object {
+    {
       "display": "inline",
     }
   }
@@ -45,7 +45,7 @@ exports[`ScrollInto renders with custom styles and className 1`] = `
   className="pinky"
   onClick={[Function]}
   style={
-    Object {
+    {
       "color": "red",
       "display": "inline",
     }
