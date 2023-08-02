@@ -3,7 +3,7 @@
 [![CI](https://github.com/dominikbulaj/react-scroll-into-view/actions/workflows/build.yml/badge.svg)](https://github.com/dominikbulaj/react-scroll-into-view/actions/workflows/build.yml)
 [![npm version](https://img.shields.io/npm/v/react-scroll-into-view)](https://www.npmjs.com/package/react-scroll-into-view)
 [![bundlephobia](https://badgen.net/bundlephobia/minzip/react-scroll-into-view)](https://bundlephobia.com/package/react-scroll-into-view)
-[![tree shakable](https://badgen.net/bundlephobia/tree-shaking/react-scroll-into-view)](https://badgen.net/bundlephobia/tree-shaking/react-scroll-into-view)
+[![tree shakable](https://badgen.net/bundlephobia/tree-shaking/react-scroll-into-view)](https://bundlephobia.com/package/react-scroll-into-view)
 
 Fast & declarative way for scrolling to any element on page. Weights only ~1.3 kB minified + gzipped
 
