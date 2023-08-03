@@ -5,7 +5,7 @@
 [![bundlephobia](https://badgen.net/bundlephobia/minzip/react-scroll-into-view)](https://bundlephobia.com/package/react-scroll-into-view)
 [![tree shakable](https://badgen.net/bundlephobia/tree-shaking/react-scroll-into-view)](https://bundlephobia.com/package/react-scroll-into-view)
 
-Fast & declarative way for scrolling to any element on page. Weights only ~1.3 kB minified + gzipped
+Fast & declarative way for scrolling to any element on page. Weights less than 600B (minified + gzipped)!
 
 ## Idea behind
 
