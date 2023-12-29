@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "esnext",
+    "module": "ES6",
     "target": "ES6",
     "lib": ["es6", "dom"],
     "sourceMap": false,

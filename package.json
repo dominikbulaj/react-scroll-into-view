@@ -2,22 +2,28 @@
   "name": "react-scroll-into-view",
   "version": "2.0.2",
   "description": "Simple React element that when clicked scrolls to any element on page",
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.js",
+  "type": "module",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
   "files": [
     "dist/"
   ],
   "scripts": {
-    "build": "package-check && rollup --config rollup.config.ts --configPlugin typescript",
+    "build": "package-check && rollup --config rollup.config.ts --configPlugin typescript && npm run copy-types && npx publint",
     "test": "jest",
     "tsc": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "copy-types": "cp ./dist/index.d.ts ./dist/index.d.cts && cp ./dist/index.d.ts ./dist/index.d.mts"
   },
   "repository": {
     "type": "git",
@@ -38,9 +44,9 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-conventional": "^17.0.3",
-    "@commitlint/types": "^17.4.4",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
+    "@commitlint/types": "^18.4.3",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^13.0.5",
     "@rollup/plugin-typescript": "^8.3.4",
@@ -76,5 +82,5 @@
     "tabWidth": 2,
     "semi": false
   },
-  "types": "dist/index.d.ts"
+  "types": "./dist/index.d.ts"
 }

@@ -8,13 +8,13 @@ export default {
   input: 'src/index.tsx',
   output: [
     {
-      file: 'dist/index.js',
+      file: 'dist/index.mjs',
       format: 'es'
     },
     {
-      file: 'dist/index.cjs.js',
+      file: 'dist/index.cjs',
       format: 'cjs',
-      exports: 'default'
+      exports: 'named'
     }
   ],
   plugins: [

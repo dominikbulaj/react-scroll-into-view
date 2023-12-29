@@ -47,7 +47,7 @@ const validScrollOptions = (
   )
 }
 
-const ScrollInto = ({
+export const ScrollInto = ({
   children,
   selector,
   smooth = true,
