@@ -3,6 +3,7 @@
   "version": "2.1.0",
   "description": "Simple React element that when clicked scrolls to any element on page",
   "type": "module",
+  "main": "./dist/index.mjs",
   "exports": {
     ".": {
       "import": {
