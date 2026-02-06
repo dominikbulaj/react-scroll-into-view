@@ -3,5 +3,4 @@
 
 npm run check
 npm run lint
-npm run fmt
 npm run test:ci

@@ -18,17 +18,14 @@
     "url": "git+https://github.com/dominikbulaj/react-scroll-into-view.git"
   },
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-      "types": {
-        "import": "./dist/index.d.mts",
-        "require": "./dist/index.d.cts"
-      },
+      "types": "./dist/index.d.mts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.mjs"
     }
   },
   "scripts": {
