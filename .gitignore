@@ -3,3 +3,4 @@ dist/
 node_modules/
 build/
 .DT_Store
+src/__screenshots__
