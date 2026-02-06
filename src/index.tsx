@@ -13,40 +13,30 @@ export type ScrollIntoViewProps = {
   onClick?: ClickHandler;
 };
 
-const validScrollOptions = (
-  scrollOptions: ScrollIntoViewOptions,
-): ScrollOptions => {
+const validScrollOptions = (scrollOptions: ScrollIntoViewOptions): ScrollOptions => {
   if (typeof scrollOptions !== "object") {
     return {};
   }
 
-  return Object.entries(scrollOptions).reduce<ScrollIntoViewOptions>(
-    (acc, [key, val]) => {
-      switch (key) {
-        case "behavior":
-          if (val === "auto" || val === "smooth") {
-            acc[key] = val;
-          }
-          break;
+  return Object.entries(scrollOptions).reduce<ScrollIntoViewOptions>((acc, [key, val]) => {
+    switch (key) {
+      case "behavior":
+        if (val === "auto" || val === "smooth") {
+          acc[key] = val;
+        }
+        break;
 
-        case "block":
-        case "inline":
-          if (
-            val === "start" ||
-            val === "center" ||
-            val === "end" ||
-            val === "nearest"
-          ) {
-            acc[key] = val;
-          }
-          break;
+      case "block":
+      case "inline":
+        if (val === "start" || val === "center" || val === "end" || val === "nearest") {
+          acc[key] = val;
+        }
+        break;
 
-        default:
-      }
-      return acc;
-    },
-    {},
-  );
+      default:
+    }
+    return acc;
+  }, {});
 };
 
 export const ScrollInto = ({

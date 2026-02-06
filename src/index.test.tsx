@@ -27,18 +27,12 @@ test("ScrollInto renders with custom styles", async () => {
       Inline styled
     </ScrollInto>,
   );
-  await expect
-    .element(getByText("Inline styled"))
-    .toHaveStyle("display: inline");
+  await expect.element(getByText("Inline styled")).toHaveStyle("display: inline");
 });
 
 test("ScrollInto renders with custom styles and className", async () => {
   const { getByText } = await render(
-    <ScrollInto
-      selector="test"
-      style={{ display: "inline", color: "red" }}
-      className="pinky"
-    >
+    <ScrollInto selector="test" style={{ display: "inline", color: "red" }} className="pinky">
       CSS and inline styled
     </ScrollInto>,
   );
