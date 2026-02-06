@@ -18,9 +18,19 @@
     "url": "git+https://github.com/dominikbulaj/react-scroll-into-view.git"
   },
   "type": "module",
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.mts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsdown src/index.tsx",
     "check": "tsc --noEmit",
