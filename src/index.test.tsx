@@ -1,67 +1,59 @@
-import React from 'react'
-import ScrollInto from './index'
-import renderer from 'react-test-renderer'
-import { render, fireEvent, screen } from '@testing-library/react'
+import { expect, test, vi } from "vitest";
+import { render } from "vitest-browser-react";
+import ScrollInto from "./index";
+import React from "react";
 
-test('ScrollInto renders with children', () => {
-  const component = renderer.create(
+test("ScrollInto renders with children", async () => {
+  const { getByText } = await render(
     <ScrollInto selector="test">
-      <div>Some child content</div>
-    </ScrollInto>
-  )
+      <div>Child node</div>
+    </ScrollInto>,
+  );
+  await expect.element(getByText("Child node")).toBeInTheDocument();
+});
 
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-test('ScrollInto renders with custom className', () => {
-  const component = renderer.create(
+test("ScrollInto renders with custom className", async () => {
+  const { getByText } = await render(
     <ScrollInto selector="test" className="custom-class">
-      <div>Some child content</div>
-    </ScrollInto>
-  )
+      CSS styled
+    </ScrollInto>,
+  );
+  await expect.element(getByText("CSS styled")).toHaveClass("custom-class");
+});
 
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+test("ScrollInto renders with custom styles", async () => {
+  const { getByText } = await render(
+    <ScrollInto selector="test" style={{ display: "inline" }}>
+      Inline styled
+    </ScrollInto>,
+  );
+  await expect.element(getByText("Inline styled")).toHaveStyle("display: inline");
+});
 
-test('ScrollInto renders with custom styles', () => {
-  const component = renderer.create(
-    <ScrollInto selector="test" style={{ display: 'inline' }}>
-      <div>Some child content</div>
-    </ScrollInto>
-  )
+test("ScrollInto renders with custom styles and className", async () => {
+  const { getByText } = await render(
+    <ScrollInto selector="test" style={{ display: "inline", color: "red" }} className="pinky">
+      CSS and inline styled
+    </ScrollInto>,
+  );
 
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
+  await expect.element(getByText("CSS and inline styled")).toHaveClass("pinky");
+  await expect
+    .element(getByText("CSS and inline styled"))
+    .toHaveStyle({ display: "inline", color: "red" });
+});
 
-test('ScrollInto renders with custom styles and className', () => {
-  const component = renderer.create(
-    <ScrollInto
-      selector="test"
-      style={{ display: 'inline', color: 'red' }}
-      className="pinky"
-    >
-      <div>Some child content</div>
-    </ScrollInto>
-  )
-
-  let tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
-})
-
-test('Uses provided callback function', () => {
-  const mockFn = jest.fn()
-  const wrapper = render(
+test("Uses provided callback function", async () => {
+  const mockFn = vi.fn();
+  const { getByText } = await render(
     <ScrollInto selector="test" onClick={mockFn}>
-      abc
-    </ScrollInto>
-  )
-  expect(mockFn).toBeCalledTimes(0)
+      Clickable
+    </ScrollInto>,
+  );
+  expect(mockFn).toBeCalledTimes(0);
 
-  fireEvent.click(screen.getByText('abc'))
-  // wrapper.find('ScrollInto').simulate('click')
-  expect(mockFn).toBeCalled()
-  expect(mockFn).toBeCalledTimes(1)
-})
+  await getByText("Clickable").click();
+
+  expect(mockFn).toBeCalled();
+  expect(mockFn).toBeCalledTimes(1);
+});
