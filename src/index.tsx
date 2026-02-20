@@ -1,6 +1,8 @@
 import React from "react";
 
-type ClickHandler = (ev: React.MouseEvent<HTMLElement>) => void;
+type ClickHandler = (
+  ev: React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLElement>,
+) => void;
 
 export type ScrollIntoViewProps = {
   selector: string;
@@ -49,15 +51,17 @@ const validScrollOptions = (
   );
 };
 
-export const ScrollInto = ({
+const emptyObject = {};
+
+const ScrollInto = ({
   children,
   selector,
   smooth = true,
-  style = {},
+  style = emptyObject,
   alignToTop = false,
   className = "",
   onClick,
-  scrollOptions = {},
+  scrollOptions = emptyObject,
 }: ScrollIntoViewProps) => {
   const scrollIntoView = () => {
     const behavior = smooth ? "smooth" : "auto";
@@ -92,7 +96,13 @@ export const ScrollInto = ({
   };
 
   return (
-    <div style={style} className={className} onClick={handleClick}>
+    <div
+      style={style}
+      className={className}
+      onClick={handleClick}
+      onKeyDown={handleClick}
+      role="button"
+    >
       {children}
     </div>
   );
