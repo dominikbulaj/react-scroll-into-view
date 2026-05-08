@@ -34,12 +34,12 @@
   "scripts": {
     "build": "tsdown src/index.tsx",
     "check": "tsc --noEmit",
-    "test": "vitest --browser.headless",
-    "test:ci": "vitest run --browser.headless",
+    "test": "vitest",
+    "test:ci": "vitest run",
     "lint": "oxlint src/",
     "fmt": "oxfmt src/",
     "fmt:check": "oxfmt --check src/",
-    "test:browser": "vitest"
+    "test:browser": "vitest --browser.headless=false"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.4.1",
